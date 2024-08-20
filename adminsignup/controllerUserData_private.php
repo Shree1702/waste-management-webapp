@@ -16,9 +16,9 @@ function smtp_mailer($to,$subject, $msg){
     $mail->IsHTML(true);
     $mail->CharSet = 'UTF-8';
     //$mail->SMTPDebug = 2; 
-    $mail->Username = "shrikantproject52@gmail.com";
-    $mail->Password = "bkapyrmpdrmjenvl";
-    $mail->SetFrom("shrikantproject52@gmail.com");
+    $mail->Username = "email";
+    $mail->Password = "password";
+    $mail->SetFrom("email");
     $mail->Subject = $subject;
     $mail->Body =$msg;
     $mail->AddAddress($to);
@@ -137,7 +137,7 @@ function smtp_mailer($to,$subject, $msg){
             if($run_query){
                 $subject = "Password Reset Code";
                 $message = "Your password reset code is $code";
-                $sender = "From: shrikantproject52@gmail.com";
+                $sender = "From: email";
                 if(smtp_mailer($email, $subject, $message, $sender)){
                     $info = "We've sent a passwrod reset otp to your email - $email";
                     $_SESSION['info'] = $info;
